@@ -6,6 +6,9 @@ $(document).ready(function() {
     // TODO: Add code to display the current date in the header of the page.
     var today = dayjs(); // reaches to dayJs to set today as a value
     $('#currentDay').text(today.format('dddd, MMMM D, YYYY h:mm A')); // changes & displays current day in visible text
+    var dateUpdated = function() {
+      document.getElementById('currentDay').innerHTML = dayjs().format('dddd, MMMM D, YYYY h:mm A');}
+      setInterval(dateUpdated, 1000);
 
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
@@ -39,6 +42,48 @@ $(document).ready(function() {
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
-  
 
+  // var hour9 = dayjs().hour(9);
+  // var hour10 = dayjs().hour(10);
+  // var hour11 = dayjs().hour(11);
+  // var hour12 = dayjs().hour('12');
+  // var hour13 = dayjs().hour('13');
+  // var hour14 = dayjs().hour(14);
+  // var hour15 = dayjs().hour(15);
+  // var hour16 = dayjs().hour(16);
+  // var hour17 = dayjs().hour(17);
+
+  // function timeChecker() {
+    //   find a way to reference hours
+
+    //   if (hour < current hour){
+    //     $(this).removeClass("future");
+    //     $(this).removeClass("present");
+    //     $(this).addClass("past");
+    //   } else if (block hour === current hour){
+    //     $(this).removeClass("past");
+    //     $(this).removeClass("future");
+    //     $(this).addClass("present");
+    //   } else {
+    //     $(this).removeClass("present");
+    //     $(this).removeClass("past");
+    //     $(this).addClass("future");
+    //   }
+    // }
+
+  //  function timeChecker() {    
+  //   if (dayjs('h')===today) { // present
+  //     $(this).removeClass("past");
+  //     $(this).removeClass("future");
+  //     $(this).addClass("present");
+  //   } else if (dayjs('h')<today) { // past
+  //     $(this).removeClass("future");
+  //     $(this).removeClass("present");
+  //     $(this).addClass("past");
+  //   } else { // future
+  //     $(this).removeClass("present");
+  //     $(this).removeClass("past");
+  //     $(this).addClass("future");
+  //   }
+  // }
 });
