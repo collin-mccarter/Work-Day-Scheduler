@@ -24,15 +24,15 @@ $(document).ready(function() {
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
-  $("#hour-9 .description").val(localStorage.getItem("hour-9"));
-  $("#hour-10 .description").val(localStorage.getItem("hour-10"));
-  $("#hour-11 .description").val(localStorage.getItem("hour-11"));
-  $("#hour-12 .description").val(localStorage.getItem("hour-12"));
-  $("#hour-13 .description").val(localStorage.getItem("hour-13")); // 1pm
-  $("#hour-14 .description").val(localStorage.getItem("hour-14")); // 2pm
-  $("#hour-15 .description").val(localStorage.getItem("hour-15")); // 3pm
-  $("#hour-16 .description").val(localStorage.getItem("hour-16")); // 4pm
-  $("#hour-17 .description").val(localStorage.getItem("hour-17")); // 5pm
+  $("#hour9 .description").val(localStorage.getItem("hour9"));
+  $("#hour10 .description").val(localStorage.getItem("hour10"));
+  $("#hour11 .description").val(localStorage.getItem("hour11"));
+  $("#hour12 .description").val(localStorage.getItem("hour12"));
+  $("#hour13 .description").val(localStorage.getItem("hour13")); // 1pm
+  $("#hour14 .description").val(localStorage.getItem("hour14")); // 2pm
+  $("#hour15 .description").val(localStorage.getItem("hour15")); // 3pm
+  $("#hour16 .description").val(localStorage.getItem("hour16")); // 4pm
+  $("#hour17 .description").val(localStorage.getItem("hour17")); // 5pm
 
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
@@ -40,4 +40,5 @@ $(document).ready(function() {
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
   
+
 });
