@@ -27,15 +27,15 @@ $(document).ready(function() {
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
-  $("#hour9 .description").val(localStorage.getItem("hour9"));
-  $("#hour10 .description").val(localStorage.getItem("hour10"));
-  $("#hour11 .description").val(localStorage.getItem("hour11"));
-  $("#hour12 .description").val(localStorage.getItem("hour12"));
-  $("#hour13 .description").val(localStorage.getItem("hour13")); // 1pm
-  $("#hour14 .description").val(localStorage.getItem("hour14")); // 2pm
-  $("#hour15 .description").val(localStorage.getItem("hour15")); // 3pm
-  $("#hour16 .description").val(localStorage.getItem("hour16")); // 4pm
-  $("#hour17 .description").val(localStorage.getItem("hour17")); // 5pm
+  $("#hour-9 .description").val(localStorage.getItem("hour-9"));
+  $("#hour-10 .description").val(localStorage.getItem("hour-10"));
+  $("#hour-11 .description").val(localStorage.getItem("hour-11"));
+  $("#hour-12 .description").val(localStorage.getItem("hour-12"));
+  $("#hour-13 .description").val(localStorage.getItem("hour-13")); // 1pm
+  $("#hour-14 .description").val(localStorage.getItem("hour-14")); // 2pm
+  $("#hour-15 .description").val(localStorage.getItem("hour-15")); // 3pm
+  $("#hour-16 .description").val(localStorage.getItem("hour-16")); // 4pm
+  $("#hour-17 .description").val(localStorage.getItem("hour-17")); // 5pm
 
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
@@ -43,47 +43,26 @@ $(document).ready(function() {
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
 
-  // var hour9 = dayjs().hour(9);
-  // var hour10 = dayjs().hour(10);
-  // var hour11 = dayjs().hour(11);
-  // var hour12 = dayjs().hour('12');
-  // var hour13 = dayjs().hour('13');
-  // var hour14 = dayjs().hour(14);
-  // var hour15 = dayjs().hour(15);
-  // var hour16 = dayjs().hour(16);
-  // var hour17 = dayjs().hour(17);
+   function timeChecker() {
+    var currentHour = dayjs().hour();
+    
+    $('.timeblock').each(function() {
+      var blockHour = parseInt($(this).attr('id').split('-')[1]);
 
-  // function timeChecker() {
-    //   find a way to reference hours
-
-    //   if (hour < current hour){
-    //     $(this).removeClass("future");
-    //     $(this).removeClass("present");
-    //     $(this).addClass("past");
-    //   } else if (block hour === current hour){
-    //     $(this).removeClass("past");
-    //     $(this).removeClass("future");
-    //     $(this).addClass("present");
-    //   } else {
-    //     $(this).removeClass("present");
-    //     $(this).removeClass("past");
-    //     $(this).addClass("future");
-    //   }
-    // }
-
-  //  function timeChecker() {    
-  //   if (dayjs('h')===today) { // present
-  //     $(this).removeClass("past");
-  //     $(this).removeClass("future");
-  //     $(this).addClass("present");
-  //   } else if (dayjs('h')<today) { // past
-  //     $(this).removeClass("future");
-  //     $(this).removeClass("present");
-  //     $(this).addClass("past");
-  //   } else { // future
-  //     $(this).removeClass("present");
-  //     $(this).removeClass("past");
-  //     $(this).addClass("future");
-  //   }
-  // }
+      if (blockHour===currentHour) { // present
+      $(this).removeClass('past');
+      $(this).removeClass('future');
+      $(this).addClass('present');
+      } else if (blockHour<currentHour) { // past
+      $(this).removeClass('future');
+      $(this).removeClass('present');
+      $(this).addClass('past');
+      } else { // future
+      $(this).removeClass('present');
+      $(this).removeClass('past');
+      $(this).addClass('future');
+      }
+    })
+  }
+  timeChecker();
 });
